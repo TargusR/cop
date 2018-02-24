@@ -34,6 +34,14 @@ php bin/console doctrine:fixtures:load
 
 In case of problems, completely drop the database (`doctrine:database:drop --force`) and try again.
 
+**Dowload Webpack dependencies**
+
+Use yarn to download webpack depenencies, required by front-end development
+
+```
+yarn install
+```
+
 **Start the built-in web server**
 
 You can use Nginx or Apache, but the built-in web server works
