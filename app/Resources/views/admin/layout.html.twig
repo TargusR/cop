@@ -1,0 +1,37 @@
+{# :: Admin Layout :: #}
+
+{% extends 'base.html.twig' %}
+
+{% block header %}
+  <div class="nav-bar__container">
+    {% block navbar %}
+      {{ include('admin/_navbar.html.twig') }}
+    {% endblock %}
+  </div>
+  <div class="flashbox__container container">
+    {% block flashbox %}
+      {{ include('public/_flashbox.html.twig') }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block body %}
+  <div class="page__container">
+    <div class="row no-gutters">
+      <div class="col-3">
+        <div class="sidebar__container">
+          {% block sidebar %}
+            {{ include('admin/_sidebar.html.twig') }}
+          {% endblock %}
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="content__container">
+          {% block content %}
+            {{ include('admin/_content.html.twig') }}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
