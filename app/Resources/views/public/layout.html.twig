@@ -1,0 +1,21 @@
+{# :: Public Layout :: #}
+
+{% extends 'base.html.twig' %}
+
+{% block header %}
+  <div class="flashbox__container container">
+    {% block flashbox %}
+      {{ include('public/_flashbox.html.twig') }}
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block body %}
+  <div class="page__container">
+    <div class="content__container">
+      {% block content %}
+        {{ include('public/_content.html.twig') }}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
