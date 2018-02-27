@@ -1,5 +1,8 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
+imports:
+    - { resource: legacy_aliases.yml }
+    
 parameters:
     #parameter_name: value
 
@@ -10,9 +13,9 @@ services:
         autowire: true
         # automatically registers your services as commands, event subscribers, etc.
         autoconfigure: true
-        # this means you cannot fetch services directly from the container via $container->get()
-        # if you need to do this, you can override this setting on individual services
-        public: false
+        # # this means you cannot fetch services directly from the container via $container->get()
+        # # if you need to do this, you can override this setting on individual services
+        # public: false
 
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -33,3 +36,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    AppBundle\Security\LoginFormAuthenticator: ~
+
+    AppBundle\Doctrine\HashPasswordListener:
+        tags:
+            - { name: doctrine.event_subscriber }
