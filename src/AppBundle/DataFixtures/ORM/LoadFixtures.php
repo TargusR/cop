@@ -2,11 +2,12 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+// use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Nelmio\Alice\Fixtures;
 
-class LoadFixtures implements FixtureInterface
+class LoadFixtures implements ORMFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
