@@ -10,19 +10,23 @@ Encore
 
     // will create web/build/app.js and web/build/app.css
     // .addEntry('app', './assets/js/app.js')
-    // .addEntry('test', './assets/css/app.scss')
+    .addEntry('main', './assets/sass/main.scss')
 
     .createSharedEntry('vendor', [
-      'jquery',
-      'bootstrap',
-      'bootstrap/scss/bootstrap.scss'
+      // 'jquery',
+      'bootstrap/dist/js/bootstrap.js',
+      'bootstrap/scss/bootstrap.scss',
+      'font-awesome/scss/font-awesome.scss'
       ])
 
     // allow sass/scss files to be processed
-    .enableSassLoader()
+    .enableSassLoader(
+      function(sassOptions) {}, {
+        resolveUrlLoader: false
+      })
 
     // allow legacy applications to use $/jQuery as a global variable
-    // .autoProvidejQuery()
+    .autoProvidejQuery()
 
     .enableSourceMaps(!Encore.isProduction())
 
