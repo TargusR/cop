@@ -1,7 +1,7 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
-imports:
-    - { resource: legacy_aliases.yml }
+# imports:
+#     - { resource: legacy_aliases.yml }
     
 parameters:
     #parameter_name: value
@@ -37,7 +37,7 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    AppBundle\Security\LoginFormAuthenticator: ~
+    # AppBundle\Security\LoginFormAuthenticator: ~
 
     AppBundle\Doctrine\HashPasswordListener:
         tags:
